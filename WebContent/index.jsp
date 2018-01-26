@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -21,5 +22,6 @@
 	<h2>爱慕课</h2>
 	<!-- 第一种注释：HTML的注释，客户端可见 -->
 	<%-- 第二种注释：JSP的注释，客户端不可见 --%>
+	<%out.println("basePath=" + basePath);%>
 </body>
 </html>
