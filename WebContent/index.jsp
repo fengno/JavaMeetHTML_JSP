@@ -22,6 +22,18 @@
 	<h2>爱慕课</h2>
 	<!-- 第一种注释：HTML的注释，客户端可见 -->
 	<%-- 第二种注释：JSP的注释，客户端不可见 --%>
+	
+	<%-- JSP脚本 --%>
 	<%out.println("basePath=" + basePath);%>
+	<!-- 换行 -->
+	<br/>
+	<%-- JSP声明 --%>
+	<%!
+		String name = "张三"; // 声明一个字符串变量
+		int add(int x, int y) {	// 声明了一个返回整型的函数，实现两个整数的求和。
+			return x + y;
+		}
+	%>
+	<% out.println("name=" + name); %>
 </body>
 </html>
