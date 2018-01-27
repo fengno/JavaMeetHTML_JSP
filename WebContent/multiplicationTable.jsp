@@ -30,9 +30,28 @@
 			}
 			return sb.toString();
 		}
+	
+		// 返回九九乘法表对应的HTML代码，通过脚本来调用，在页面上显示
+		void printMultiTable2(JspWriter out) throws Exception
+		{
+			for (int i=1; i<=9; i++)
+			{
+				for (int j=1; j<=9; j++)
+				{
+					// JSP内置out对象
+					out.println(i + "*" + j + "=" + (i*j) + "&nbsp;&nbsp;&nbsp;&nbsp;");
+				}
+				// 追加换行标签
+				out.println("<br>");
+			}
+		}
 	%>
 	<h1>九九乘法表（声明+表达式实现）</h1>
 	<hr>
 	<%= printMultiTable1() %>
+	<br>
+	<h1>九九乘法表（声明+脚本实现）</h1>
+	<hr>
+	<% printMultiTable2(out); %>
 </body>
 </html>
