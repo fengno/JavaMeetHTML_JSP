@@ -15,6 +15,11 @@
 <body>
 	<h1>request内置对象</h1>
 	<hr>
+	<%-- tomcat提交表单时默认的字符集是ISOxxx，
+		在接收参数之前将字符集与传参页面contentType中的charset保持一致，可解决中文乱码问题 --%>
+	<% 
+		request.setCharacterEncoding("UTF-8");// 解决中文乱码问题
+	%>
 	用户名：<%= request.getParameter("username") %><br>
 	爱好：
 	<%
