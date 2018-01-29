@@ -20,6 +20,9 @@
 			<tr>
 				<td>用户名：</td>
 				<td><input type="text" name="username"/></td>
+				<%
+					request.setAttribute("password", "123456");
+				%>
 			</tr>
 			<tr>
 				<td>爱好：</td>

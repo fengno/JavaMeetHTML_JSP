@@ -19,6 +19,7 @@
 		在接收参数之前将字符集与传参页面contentType中的charset保持一致，可解决中文乱码问题 --%>
 	<% 
 		request.setCharacterEncoding("UTF-8");// 解决中文乱码问题
+		request.setAttribute("password", "abcd");
 	%>
 	用户名：<%= request.getParameter("username") %><br>
 	爱好：
@@ -30,5 +31,8 @@
 			}
 		}
 	%>
+	<br>
+	<%-- 这里获取的是本页面设置的password属性，而非reg.jsp页面设置的password属性 --%>
+	密码：<%= request.getAttribute("password") %>
 </body>
 </html>
