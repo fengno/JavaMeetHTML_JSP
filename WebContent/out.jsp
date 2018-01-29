@@ -20,5 +20,8 @@
 	缓冲区大小：<%= out.getBufferSize() %>&nbsp;byte<br>
 	缓冲区剩余大小：<%= out.getRemaining() %>&nbsp;byte<br>
 	是否自动清空缓冲区：<%= out.isAutoFlush() %>
+	<%-- flush后查看缓冲区剩余大小 --%>
+	<% out.flush(); %>
+	<br>flush后缓冲区剩余大小：<%= out.getRemaining() %>&nbsp;byte<br>
 </body>
 </html>
