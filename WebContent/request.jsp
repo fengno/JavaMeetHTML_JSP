@@ -33,6 +33,17 @@
 	%>
 	<br>
 	<%-- 这里获取的是本页面设置的password属性，而非reg.jsp页面设置的password属性 --%>
-	密码：<%= request.getAttribute("password") %>
+	密码：<%= request.getAttribute("password") %><br>
+	请求体的MIME类型：<%= request.getContentType() %><br>
+	协议类型及版本号：<%= request.getProtocol() %><br>
+	服务器主机名：<%= request.getServerName() %><br>
+	服务器端口号：<%= request.getServerPort() %><br>
+	请求文件的长度：<%= request.getContentLength() %><br>
+	请求客户端的RemoteAddress：<%= request.getRemoteAddr() %><br>
+	请求客户端的RemoteHost：<%= request.getRemoteHost() %><br>
+	请求客户端的RemotePort：<%= request.getRemotePort() %><br>
+	请求客户端的RemoteUser：<%= request.getRemoteUser() %><br>
+	请求的真实路径：<%= request.getRealPath("request.jsp") %><br>
+	请求的上下文路径：<%= request.getContextPath() %><br>
 </body>
 </html>
