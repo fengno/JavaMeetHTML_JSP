@@ -38,6 +38,6 @@
 	<br>
 	<br>
 	<hr>
-	<a href="request.jsp?username=lisi">测试URL传参数</a>
+	<a href="request.jsp?username=李四">测试URL传中文参数</a>
 </body>
 </html>
