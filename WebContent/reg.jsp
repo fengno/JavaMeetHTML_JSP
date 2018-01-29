@@ -35,5 +35,9 @@
 			</tr>
 		</table>
 	</form>
+	<br>
+	<br>
+	<hr>
+	<a href="request.jsp?username=lisi">测试URL传参数</a>
 </body>
 </html>
