@@ -15,7 +15,7 @@
 <body>
 	<h1>用户登录</h1>
 	<hr>
-	<form action="dologin.jsp" name="loginForm" method="get">
+	<form action="dologin.jsp" name="loginForm" method="post">
 		<table>
 			<tr>
 				<td>用户名：</td>
