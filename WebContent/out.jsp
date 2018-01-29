@@ -15,13 +15,13 @@
 <body>
 	<h1>out内置对象</h1>
 	<%
-		out.println("<h2>打印HTML标签</h2><br>");
+		out.println("<h2>静夜思</h2><br>");
+		out.println("床前明月光<br>");
+		out.println("疑是地上霜<br>");
+		out.flush();
+		out.clear();//flush后调用clear会抛出异常
+		out.println("举头望明月<br>");
+		out.println("低头思故乡<br>");
 	%>
-	缓冲区大小：<%= out.getBufferSize() %>&nbsp;byte<br>
-	缓冲区剩余大小：<%= out.getRemaining() %>&nbsp;byte<br>
-	是否自动清空缓冲区：<%= out.isAutoFlush() %>
-	<%-- flush后查看缓冲区剩余大小 --%>
-	<% out.flush(); %>
-	<br>flush后缓冲区剩余大小：<%= out.getRemaining() %>&nbsp;byte<br>
 </body>
 </html>
