@@ -19,7 +19,7 @@
 		out.println("床前明月光<br>");
 		out.println("疑是地上霜<br>");
 		out.flush();
-		out.clear();//flush后调用clear会抛出异常
+		out.clearBuffer();//flush后调用clearBuffer不会抛出异常
 		out.println("举头望明月<br>");
 		out.println("低头思故乡<br>");
 	%>
