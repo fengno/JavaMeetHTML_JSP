@@ -18,7 +18,10 @@
 	<hr>
 	<%
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+		session.setAttribute("username", "admin");
 	%>
-	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %>
+	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
+	Session的ID编号：<%= session.getId() %><br>
+	从Session中获取用户名：<%= session.getAttribute("username") %><br>
 </body>
 </html>
