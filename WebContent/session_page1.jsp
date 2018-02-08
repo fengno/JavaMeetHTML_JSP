@@ -24,7 +24,7 @@
 		
 		// 设置当前session最大生存期限（单位是秒）
 		//session.setMaxInactiveInterval(10);//10秒钟
-		
+		// 测试只要当前会话页面没有全部关闭，重新打开新的浏览器窗口访问同一项目资源（页面）时，属于同一次会话。		
 	%>
 	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
 	Session的ID编号：<%= session.getId() %><br>
