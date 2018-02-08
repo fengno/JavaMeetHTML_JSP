@@ -21,6 +21,10 @@
 		session.setAttribute("username", "admin");
 		session.setAttribute("password", "123456");
 		session.setAttribute("age", "18");
+		
+		// 设置当前session最大生存期限（单位是秒）
+		session.setMaxInactiveInterval(10);//10秒钟
+		
 	%>
 	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
 	Session的ID编号：<%= session.getId() %><br>
