@@ -15,7 +15,7 @@
 <body>
 	<h1>用户注册</h1>
 	<hr>
-	<form action="request.jsp" name="reqForm" method="post">
+	<form action="response.jsp" name="reqForm" method="post">
 		<table>
 			<tr>
 				<td>用户名：</td>

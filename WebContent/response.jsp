@@ -8,5 +8,5 @@
 	out.println("<h1>response内置对象</h1>");
 	out.println("<hr>");
 	
-	response.sendRedirect("reg.jsp");//请求重定向
+	response.sendRedirect("request.jsp");//请求重定向
 %>
