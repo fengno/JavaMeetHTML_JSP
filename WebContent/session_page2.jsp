@@ -18,11 +18,10 @@
 	<hr>
 	<%
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
-		session.setAttribute("username", "admin");
 	%>
+	<%-- 从session_page1.jsp跳转过来，创建时间、ID都应该不变，还能获取到用户名 --%>
 	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
 	Session的ID编号：<%= session.getId() %><br>
 	从Session中获取用户名：<%= session.getAttribute("username") %><br>
-	<a href="session_page2.jsp" target="_blank">跳转到session_page2.jsp</a>
 </body>
 </html>
