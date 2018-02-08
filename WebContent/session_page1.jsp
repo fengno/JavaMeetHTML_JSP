@@ -19,6 +19,8 @@
 	<%
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
 		session.setAttribute("username", "admin");
+		session.setAttribute("password", "123456");
+		session.setAttribute("age", "18");
 	%>
 	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
 	Session的ID编号：<%= session.getId() %><br>

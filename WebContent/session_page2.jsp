@@ -23,5 +23,12 @@
 	Session创建时间：<%= sdf.format(new Date(session.getCreationTime())) %><br>
 	Session的ID编号：<%= session.getId() %><br>
 	从Session中获取用户名：<%= session.getAttribute("username") %><br>
+	Session中保存的属性有：
+	<% 
+		String[] names = session.getValueNames();
+		for (String name : names) {
+			out.println(name + ":&nbsp;&nbsp" + session.getValue(name) + "<br>");
+		}
+	%>
 </body>
 </html>
