@@ -4,16 +4,21 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+	String username = "";
+	String password = "";
+	// 防止中文乱码
+	request.setCharacterEncoding("utf-8");
+	
+	username = request.getParameter("username");
+	password = request.getParameter("password");
+	
+	// 如果用户名、密码匹配，则登录成功
+	if ("admin".equals(username) && "admin".equals(password)) {
+		session.setAttribute("loginUser", username);
+		// 登录成功使用服务器内部转发到成功页面
+		request.getRequestDispatcher("login_success.jsp").forward(request, response);
+	} else {
+		// 登录失败则请求重定向到失败页面
+		response.sendRedirect("login_failure.jsp");
+	}
 %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>My JSP 'index.jsp' starting page</title>
-</head>
-<body>
-	<h1>用户登录成功</h1>
-	<hr>
-</body>
-</html>

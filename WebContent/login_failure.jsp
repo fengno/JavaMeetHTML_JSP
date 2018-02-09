@@ -13,18 +13,11 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<h1>用户登录</h1>
+	<h1>用户登录失败</h1>
 	<hr>
-	<form action="dologin.jsp" name="loginForm" method="post">
-		<p>
-			<label>用户名：</label>
-			<input type="text" name="username" value="" />
-			<label>密码：</label>
-			<input type="password" name="password" value="" />
-		</p>
-		<p>
-			<input type="submit" value="登录"/></td>
-		</p>
-	</form>
+	<div>
+		登录失败<br>
+		<a href="login.jsp">返回登录</a>
+	</div>
 </body>
 </html>
