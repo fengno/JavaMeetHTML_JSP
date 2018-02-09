@@ -15,7 +15,7 @@
 <body>
 	<h1>用户登录</h1>
 	<hr>
-	<form action="dologin.jsp" name="loginForm" method="post">
+	<form action="dologin.jsp?mypass=666888" name="loginForm" method="post">
 		<p>
 			<label>用户名：</label>
 			<input type="text" name="username" value="" />

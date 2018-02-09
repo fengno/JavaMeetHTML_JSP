@@ -23,9 +23,13 @@
 	<!-- 根据表单自动匹配部分的属性(表单属性名称与bean的属性名称部分匹配)，密码字段没有匹配，会显示null
 	<jsp:setProperty property="username" name="myUsers"/>
 	 -->
-	<!-- 跟表单无关（即使表单赋值了，也会在这里被替换掉），通过手工赋值给属性		-->
+	<!-- 跟表单无关（即使表单赋值了，也会在这里被替换掉），通过手工赋值给属性	 
 	<jsp:setProperty property="username" name="myUsers" value="张三"/>
 	<jsp:setProperty property="password" name="myUsers" value="123"/>
+	-->
+	<!-- 通过URl传参数给属性赋值：密码来自url传参，名称来自表单 -->
+	<jsp:setProperty property="password" name="myUsers" param="mypass"/>
+	<jsp:setProperty property="username" name="myUsers" />
 	用户名：<%= myUsers.getUsername() %><br>
 	密码：<%= myUsers.getPassword() %><br>
 </body>
