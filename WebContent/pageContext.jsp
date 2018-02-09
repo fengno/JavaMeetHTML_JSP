@@ -17,5 +17,9 @@
 	<h1>pageContext内置对象</h1>
 	<hr>
 	用户名：<%= pageContext.getSession().getAttribute("username") %><br>
+	<%
+		// 跳转到注册页面
+		pageContext.forward("reg.jsp");
+	%>
 </body>
 </html>
