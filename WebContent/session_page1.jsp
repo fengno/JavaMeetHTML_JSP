@@ -32,7 +32,7 @@
 	从Session中获取用户名：<%= session.getAttribute("username") %><br>
 	<%
 		// 测试通过调用session.invalidate()方法的方式对session进行销毁
-		session.invalidate();//销毁当前会话
+		//session.invalidate();//销毁当前会话
 	%>
 	<a href="session_page2.jsp" target="_blank">跳转到session_page2.jsp</a>
 </body>
