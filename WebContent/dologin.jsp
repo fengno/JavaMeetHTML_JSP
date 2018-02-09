@@ -14,7 +14,7 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="application"/>
+	<jsp:useBean id="myUsers" class="com.po.Users" scope="session"/>
 	<h1>setProperty动作元素</h1>
 	<hr>
 	<!-- 根据表单自动匹配所有的属性(表单属性名称与bean的属性名称全匹配)
