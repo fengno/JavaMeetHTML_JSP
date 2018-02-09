@@ -30,7 +30,12 @@
 	<!-- 通过URl传参数给属性赋值：密码来自url传参，名称来自表单 -->
 	<jsp:setProperty property="password" name="myUsers" param="mypass"/>
 	<jsp:setProperty property="username" name="myUsers" />
+	<%-- 使用传统的表达式方式来获取用户名和密码
 	用户名：<%= myUsers.getUsername() %><br>
 	密码：<%= myUsers.getPassword() %><br>
+	 --%>
+	<%-- 使用getProperty方式来获取用户名和密码	 --%>
+	用户名：<jsp:getProperty property="username" name="myUsers"/><br>
+	密码：<jsp:getProperty property="password" name="myUsers"/><br>
 </body>
 </html>
