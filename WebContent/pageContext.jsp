@@ -19,7 +19,8 @@
 	用户名：<%= pageContext.getSession().getAttribute("username") %><br>
 	<%
 		// 跳转到注册页面
-		pageContext.forward("reg.jsp");
+		//pageContext.forward("reg.jsp");
+		pageContext.include("include.jsp");
 	%>
 </body>
 </html>
