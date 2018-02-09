@@ -1,3 +1,4 @@
+<%@page import="com.po.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,5 +14,9 @@
 	<jsp:useBean id="myUsers" class="com.po.Users" scope="application"/>
 	用户名：<jsp:getProperty property="username" name="myUsers"/><br>
 	密码：<jsp:getProperty property="password" name="myUsers"/><br>
+	<!-- 使用内置对象获取用户名和密码 -->
+	<hr>
+	用户名：<%=((Users)application.getAttribute("myUsers")).getUsername() %><br>
+	密码：<%=((Users)application.getAttribute("myUsers")).getPassword() %><br>
 </body>
 </html>
