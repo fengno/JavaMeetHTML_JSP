@@ -17,9 +17,10 @@
 	<jsp:useBean id="myUsers" class="com.po.Users" scope="page"/>
 	<h1>setProperty动作元素</h1>
 	<hr>
-	<!-- 根据表单自动匹配所有的属性(表单属性名称与bean的属性名称全匹配) -->
-	<jsp:setProperty property="*" name="myUsers"/>
+	<!-- 根据表单自动匹配部分的属性(表单属性名称与bean的属性名称部分匹配) -->
+	<jsp:setProperty property="username" name="myUsers"/>
 	用户名：<%= myUsers.getUsername() %><br>
+	<!--密码字段没有匹配，会显示null  -->
 	密码：<%= myUsers.getPassword() %><br>
 </body>
 </html>
