@@ -14,7 +14,7 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="session"/>
+	<jsp:useBean id="myUsers" class="com.po.Users" scope="request"/>
 	<h1>setProperty动作元素</h1>
 	<hr>
 	<!-- 根据表单自动匹配所有的属性(表单属性名称与bean的属性名称全匹配)
@@ -37,7 +37,7 @@
 	<%-- 使用getProperty方式来获取用户名和密码	 --%>
 	用户名：<jsp:getProperty property="username" name="myUsers"/><br>
 	密码：<jsp:getProperty property="password" name="myUsers"/><br>
-	<hr>
+	<hr><!-- 超链接相当于一次请求重定向， 该请求中不包含用户对象-->
 	<a href="testScope.jsp">测试JavaBean四个作用域范围</a>
 </body>
 </html>
