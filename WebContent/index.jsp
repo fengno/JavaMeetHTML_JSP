@@ -1,3 +1,4 @@
+<%@page import="com.po.Users"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -46,5 +47,14 @@
 	<!-- 换行 -->
 	<br/>
 	求和：<%=add(3, 4) %>
+	<hr>
+	<h1>使用普通方式创建javabean的实例</h1>
+	<%
+		Users user = new Users();
+		user.setUsername("admin");
+		user.setPassword("123");
+	%>
+	用户名:<%= user.getUsername() %><br>
+	密码：<%= user.getPassword() %><br>
 </body>
 </html>
