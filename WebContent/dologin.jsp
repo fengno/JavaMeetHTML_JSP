@@ -39,5 +39,7 @@
 	密码：<jsp:getProperty property="password" name="myUsers"/><br>
 	<hr><!-- 超链接相当于一次请求重定向， 该请求中不包含用户对象-->
 	<a href="testScope.jsp">测试JavaBean四个作用域范围</a>
+	<!-- 使用服务器内部转发来保证是同一个请求 -->
+	<%request.getRequestDispatcher("testScope.jsp").forward(request, response); %>
 </body>
 </html>
