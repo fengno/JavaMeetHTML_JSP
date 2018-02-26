@@ -11,12 +11,25 @@
 <body>
 	<h1>Javabean的四个作用域范围</h1>
 	<hr>
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="request"/>
+	<jsp:useBean id="myUsers" class="com.po.Users" scope="page"/>
 	用户名：<jsp:getProperty property="username" name="myUsers"/><br>
 	密码：<jsp:getProperty property="password" name="myUsers"/><br>
 	<!-- 使用内置对象获取用户名和密码 -->
 	<hr>
+	<%--
 	用户名：<%=((Users)request.getAttribute("myUsers")).getUsername() %><br>
 	密码：<%=((Users)request.getAttribute("myUsers")).getPassword() %><br>
+	 --%>
+	<% 
+		String username = ""; 
+		String password = "";
+		if (pageContext.getAttribute("myUsers") != null) {
+			Users user = (Users)pageContext.getAttribute("myUsers");
+			username = user.getUsername();
+			password = user.getPassword();
+		}
+	%>
+	用户名：<%=username %><br>
+	密码：<%=password %><br>
 </body>
 </html>
