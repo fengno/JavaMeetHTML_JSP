@@ -1,8 +1,18 @@
+<%@page import="com.po.Users"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%-- 
+	pageEncoding是jsp文件本身的编码
+	contentType的charset是指服务器发给客户端时内容的编码
+--%>
 <%
+	// 第三种注释：JSP脚本注释
 	String path = request.getContextPath();
+	// 单行注释
+	/*
+	   多行注释
+	*/
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
@@ -13,7 +23,7 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<h1>用户登录</h1>
+	<h1>用户信息</h1>
 	<hr>
 	<%
 		String username = "";
@@ -30,18 +40,10 @@
 			}
 		}
 	%>
-	<form action="dologin.jsp" name="loginForm" method="post">
-		<p>
-			<label>用户名：</label>
-			<input type="text" name="username" value="<%=username %>" />
-			<label>密码：</label>
-			<input type="password" name="password" value="<%=password %>" />
-			<br>
-			<input type="checkbox" checked="checked" name="isUseCookie">十天内记住我的登录状态</input>
-		</p>
-		<p>
-			<input type="submit" value="登录"/></td>
-		</p>
-	</form>
+	<br>
+	<br>
+	<br>
+	用户名:<%= username %><br>
+	密码：<%= password %><br>
 </body>
 </html>
