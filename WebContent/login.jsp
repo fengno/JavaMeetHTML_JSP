@@ -1,5 +1,5 @@
 <%@page import="java.io.File"%>
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="java.util.*,java.net.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -16,16 +16,18 @@
 	<h1>用户登录</h1>
 	<hr>
 	<%
+		// 防止中文乱码
+		request.setCharacterEncoding("utf-8");
 		String username = "";
 		String password = "";
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null && cookies.length > 0) {
 			for (Cookie c : cookies) {
 				if (c.getName().equals("username")) {
-					username = c.getValue();
+					username = URLDecoder.decode(c.getValue(), "utf-8");
 				}
 				if (c.getName().equals("password")) {
-					password = c.getValue();
+					password = URLDecoder.decode(c.getValue(), "utf-8");
 				}
 			}
 		}

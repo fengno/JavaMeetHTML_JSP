@@ -1,11 +1,11 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="java.util.*,java.net.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 	// 防止中文乱码
-	request.setCharacterEncoding("utf-8");
+	//request.setCharacterEncoding("utf-8");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,12 +22,14 @@
 	<br>
 	<br>
 	<%
+		request.setCharacterEncoding("utf-8");
 		// 首先判断用户是否选择了记住登录状态
 		String[] isUseCookies = request.getParameterValues("isUseCookie");
 		if (isUseCookies != null && isUseCookies.length > 0) {
-			// 把用户名和密码保存在Cookie对象里
-			String username = request.getParameter("username");
-			String password = request.getParameter("password");
+			// 把用户名和密码保存在Cookie对象里，使用URLEncoder解决无法在Cookie中保存中文字符的问题
+			String username = URLEncoder.encode(request.getParameter("username"), "utf-8");
+			String password = URLEncoder.encode(request.getParameter("password"), "utf-8");
+			
 			Cookie usernameCookie = new Cookie("username", username);
 			Cookie passwordCookie = new Cookie("password", password);
 			// 设置最大生存期限为10天
