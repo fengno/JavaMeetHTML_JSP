@@ -15,15 +15,20 @@
 		request.setCharacterEncoding("utf-8");
 		String username = "";
 		String password = "";
+		String email = "";
 		if (request.getParameter("username") != null) {
 			username = request.getParameter("username");
 		}
 		if (request.getParameter("password") != null) {
 			password = request.getParameter("password");
 		}
+		if (request.getParameter("email") != null) {
+			email = request.getParameter("email");
+		}
 	%>
 	<br>
-	用户名:<%= username %><br>
-	密码：<%= password %><br>
+	用户名:<%=username %><br>
+	密码：<%=password %><br>
+	电子 邮箱：<%=email %><br>
 </body>
 </html>

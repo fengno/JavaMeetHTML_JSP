@@ -32,7 +32,7 @@
 			}
 		}
 	%>
-	<form action="Forward_Action.jsp" name="loginForm" method="post">
+	<form action="dologin2.jsp" name="loginForm" method="post">
 		<p>
 			<label>用户名：</label>
 			<input type="text" name="username" value="<%=username %>" />
