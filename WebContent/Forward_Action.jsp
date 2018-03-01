@@ -9,6 +9,9 @@
 <body>
 	<h1>Include动作</h1>
 	<hr>
-	<jsp:forward page="users2.jsp"/>
+	<!-- <jsp:forward page="users2.jsp"/> 等价于-->
+	<%
+		request.getRequestDispatcher("user2.jsp").forward(request, response);
+	%>
 </body>
 </html>
