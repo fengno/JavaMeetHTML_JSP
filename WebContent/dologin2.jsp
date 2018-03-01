@@ -14,8 +14,10 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
+		<%-- param动作可以添加新的参数，也可以修改原来的参数 --%>
 	<jsp:forward page="users2.jsp">
 		<jsp:param value="admin@123.com" name="email"/>
+		<jsp:param value="修改原来的参数" name="username"/>
 	</jsp:forward>
 </body>
 </html>
