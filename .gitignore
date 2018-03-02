@@ -9,3 +9,6 @@
 .settings/.jsdtscope
 .settings/org.eclipse.wst.jsdt.ui.superType.container
 *.class
+# 忽略 target/ 目录下的所有文件
+target/
+*.prefs
