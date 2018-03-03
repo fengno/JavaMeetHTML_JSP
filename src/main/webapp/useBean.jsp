@@ -8,7 +8,7 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="page"/>
+	<jsp:useBean id="myUsers" class="po.Users" scope="page"/>
 	<h1>使用useBean动作来创建javabean的实例</h1>
 	<hr>
 	用户名:<%= myUsers.getUsername() %><br>

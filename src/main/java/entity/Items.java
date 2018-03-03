@@ -1,4 +1,4 @@
-package com.entity;
+package entity;
 
 // 商品类
 public class Items {

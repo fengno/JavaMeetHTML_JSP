@@ -1,12 +1,13 @@
-package com.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.entity.Items;
-import com.util.DBHelper;
+import util.DBHelper;
+
+import entity.Items;
 
 // 商品的业务逻辑类
 public class ItemsDAO {

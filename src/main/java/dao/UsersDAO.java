@@ -1,6 +1,6 @@
-package com.dao;
+package dao;
 
-import com.po.Users;
+import po.Users;
 
 // 用户的业务逻辑类
 public class UsersDAO {

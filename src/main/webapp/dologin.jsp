@@ -15,7 +15,7 @@
 <title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="page"/>
+	<jsp:useBean id="myUsers" class="po.Users" scope="page"/>
 	<h1>登录成功</h1>
 	<br>
 	<br>

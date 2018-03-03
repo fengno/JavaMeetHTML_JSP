@@ -1,4 +1,4 @@
-package com.po;
+package po;
 
 /**
  * 用户类
