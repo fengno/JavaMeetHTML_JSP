@@ -76,7 +76,68 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <% 
             }
           %>
-         
+          <% 
+              String list ="";
+              //从客户端获得Cookies集合
+              Cookie[] cookies = request.getCookies();
+              //遍历这个Cookies集合
+              if(cookies!=null&&cookies.length>0)
+              {
+	              for(Cookie c:cookies)
+	              {
+	                  if(c.getName().equals("ListViewCookie"))
+	                  {
+	                     list = c.getValue();
+	                  }
+	              }
+	          }
+              /* 
+              	其实是不能直接使用逗号这种特殊符号（对cookie 0版本标准而言，新版本cookie 1没问题）作为cookie的内容。而新版本的Cookie（参见RFC 2109）目前还不被Javax.servlet.http.Cookie包所支持。
+				补充一下Cookie Version 0中，某些特殊的字符，例如：空格，方括号，圆括号，等于号（=），逗号，双引号，斜杠，问号，@符号，冒号，分号都不能作为Cookie的内容。
+			  */
+              list+=request.getParameter("id")+"#";
+              //如果浏览记录超过1000条，清零.
+              String[] arr = list.split("#");
+              if(arr!=null&&arr.length>0)
+              {
+                  if(arr.length>=1000)
+                  {
+                      list="";
+                  }
+              }
+              Cookie cookie = new Cookie("ListViewCookie",list);
+              response.addCookie(cookie);
+          
+          %>
+          <!-- 浏览过的商品 -->
+          <td width="30%" bgcolor="#EEE" align="center">
+             <br>
+             <b>您浏览过的商品</b><br>
+             <!-- 循环开始 -->
+             <% 
+                ArrayList<Items> itemlist = itemDao.getViewList(list);
+                if(itemlist!=null&&itemlist.size()>0 )
+                {
+                   System.out.println("itemlist.size="+itemlist.size());
+                   for(Items i:itemlist)
+                   {
+                         
+             %>
+             <div>
+             <dl>
+               <dt>
+                 <a href="details.jsp?id=<%=i.getId()%>"><img src="images/<%=i.getPicture() %>" width="120" height="90" border="1"/></a>
+               </dt>
+               <dd class="dd_name"><%=i.getName() %></dd> 
+               <dd class="dd_city">产地:<%=i.getCity() %>&nbsp;&nbsp;价格:<%=i.getPrice() %> ￥ </dd> 
+             </dl>
+             </div>
+             <% 
+                   }
+                }
+             %>
+             <!-- 循环结束 -->
+          </td>
         </tr>
       </table>
     </center>

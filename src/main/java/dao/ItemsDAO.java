@@ -107,4 +107,38 @@ public class ItemsDAO {
 			}
 		}
 	}
+	
+	// 获取最近浏览的前五条商品信息
+	public ArrayList<Items> getViewList(String list)
+	{
+		System.out.println("list:"+list);
+		ArrayList<Items> itemlist = new ArrayList<Items>();
+		int iCount=5; // 每次返回前五条记录
+		if(list!=null&&list.length()>0)
+		{
+		    String[] arr = list.split("#");
+		    System.out.println("arr.length="+arr.length);
+		    //如果商品记录大于等于5条
+		    if(arr.length>=5)
+		    {
+		       for(int i=arr.length-1;i>=arr.length-iCount;i--)
+		       {
+		    	  itemlist.add(getItemsById(Integer.parseInt(arr[i])));  
+		       }
+		    }
+		    else
+		    {
+		    	for(int i=arr.length-1;i>=0;i--)
+		    	{
+		    		itemlist.add(getItemsById(Integer.parseInt(arr[i])));
+		    	}
+		    }
+		    return itemlist;
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
 }
