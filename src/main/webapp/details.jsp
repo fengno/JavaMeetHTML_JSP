@@ -95,7 +95,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               	其实是不能直接使用逗号这种特殊符号（对cookie 0版本标准而言，新版本cookie 1没问题）作为cookie的内容。而新版本的Cookie（参见RFC 2109）目前还不被Javax.servlet.http.Cookie包所支持。
 				补充一下Cookie Version 0中，某些特殊的字符，例如：空格，方括号，圆括号，等于号（=），逗号，双引号，斜杠，问号，@符号，冒号，分号都不能作为Cookie的内容。
 			  */
-              list+=request.getParameter("id")+"#";
+			  String newItem = request.getParameter("id")+"#";
+              if (list.contains(newItem)) {
+            	  // 去重
+            	  list = list.replaceAll(newItem, "");
+              }
+              list+=newItem;
               //如果浏览记录超过1000条，清零.
               String[] arr = list.split("#");
               if(arr!=null&&arr.length>0)
