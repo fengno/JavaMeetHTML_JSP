@@ -9,9 +9,15 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- 设置会话1分钟后过期 -->
   <session-config>
-  	<session-timeout>1</session-timeout>
+    <session-timeout>1</session-timeout>
   </session-config>
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/servlet/HelloServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
