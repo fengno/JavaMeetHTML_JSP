@@ -39,7 +39,11 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+		System.out.println("开始处理POST请求。。。");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter writer = response.getWriter();
+		writer.println("<strong>Hello Servlet!</strong>");
 	}
 
 }

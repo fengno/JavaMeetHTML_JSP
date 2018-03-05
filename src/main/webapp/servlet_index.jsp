@@ -9,5 +9,8 @@
 <body>
 	<hr>
 	<a href="servlet/HelloServlet">GET方式请求HelloServlet</a>
+	<form action="servlet/HelloServlet" method="post">
+		<input type="submit" value="POST方式请求HelloServlet"/>
+	</form>
 </body>
 </html>
