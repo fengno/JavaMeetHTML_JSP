@@ -48,7 +48,7 @@ public class TestServlet1 extends HttpServlet {
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.println("<h1>大家好，我是TestServlet1！</h1>");
+		out.println("<h1>你好，我是TestServlet1！</h1>");
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();

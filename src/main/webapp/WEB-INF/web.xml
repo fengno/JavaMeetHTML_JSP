@@ -10,12 +10,10 @@
  <servlet>
   <servlet-name>TestServlet1</servlet-name>
   <servlet-class>servlet.TestServlet1</servlet-class>
-  <load-on-startup>2</load-on-startup>
  </servlet>
  <servlet>
   <servlet-name>TestServlet2</servlet-name>
   <servlet-class>servlet.TestServlet2</servlet-class>
-  <load-on-startup>1</load-on-startup>
  </servlet>
  <servlet-mapping>
   <servlet-name>HelloServlet</servlet-name>
