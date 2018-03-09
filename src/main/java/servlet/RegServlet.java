@@ -79,8 +79,9 @@ public class RegServlet extends HttpServlet {
 			email = request.getParameter("email");
 			introduce = request.getParameter("introduce");
 			birthday = sdf.parse(request.getParameter("birthday"));
-			// 复选框的取值用getParameterValues
-			if(request.getParameterValues("isAccept")!=null)
+			// 如果获取表单单个值，可以用getParameter；如果获取复选框类型的多个值，可以用getParameterValues
+//			if(request.getParameterValues("isAccept")!=null)
+			if(request.getParameter("isAccept")!=null)
 			{
 				isAccept = request.getParameter("isAccept");
 			}
