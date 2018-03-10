@@ -1,16 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<hr>
-	<a href="servlet/HelloServlet">GET方式请求HelloServlet</a>
-	<form action="servlet/HelloServlet" method="post">
-		<input type="submit" value="POST方式请求HelloServlet"/>
-	</form>
-</body>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+  </head>
+  
+  <body>
+    <h1>Servlet路径跳转</h1>
+    <hr>
+    <!--使用相对路径访问HelloServlet -->
+    <!-- /servlet/HelloServlet 第一个/表示服务器的根目录 -->
+    <a href="servlet/HelloServlet">访问HelloServlet!</a><br>
+    <!-- 使用绝对路径 访问HelloServlet,可以使用path变量:path变量表示项目的根目录-->
+    <a href="<%=path%>/servlet/HelloServlet">访问HelloServlet!</a><br>
+  </body>
 </html>
