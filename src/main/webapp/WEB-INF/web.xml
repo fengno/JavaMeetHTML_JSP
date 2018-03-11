@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="3.0"
- xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
- <display-name>learningJSP</display-name>
- <servlet>
-  <servlet-name>HelloServlet</servlet-name>
-  <servlet-class>servlet.HelloServlet</servlet-class>
- </servlet>
- <servlet>
-  <servlet-name>TestServlet1</servlet-name>
-  <servlet-class>servlet.TestServlet1</servlet-class>
- </servlet>
- <servlet>
-  <servlet-name>TestServlet2</servlet-name>
-  <servlet-class>servlet.TestServlet2</servlet-class>
- </servlet>
-   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>RegServlet</servlet-name>
-    <servlet-class>servlet.RegServlet</servlet-class>
-  </servlet>
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>learningJSP</display-name>
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TestServlet1</servlet-name>
+		<servlet-class>servlet.TestServlet1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TestServlet2</servlet-name>
+		<servlet-class>servlet.TestServlet2</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>RegServlet</servlet-name>
+		<servlet-class>servlet.RegServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>servlet.TestServlet</servlet-class>
+	</servlet>
 
-  <servlet-mapping>
-    <servlet-name>RegServlet</servlet-name>
-    <url-pattern>/servlet/RegServlet</url-pattern>
-  </servlet-mapping>
- <servlet-mapping>
-  <servlet-name>HelloServlet</servlet-name>
-  <url-pattern>/servlet/HelloServlet</url-pattern>
- </servlet-mapping>
- <servlet-mapping>
-  <servlet-name>TestServlet1</servlet-name>
-  <url-pattern>/servlet/TestServlet1</url-pattern>
- </servlet-mapping>
- <servlet-mapping>
-  <servlet-name>TestServlet2</servlet-name>
-  <url-pattern>/servlet/TestServlet2</url-pattern>
- </servlet-mapping>
- 
- <session-config>
-  <session-timeout>1</session-timeout>
- </session-config>
- 
- <welcome-file-list>
-  <welcome-file>index.html</welcome-file>
-  <welcome-file>index.htm</welcome-file>
-  <welcome-file>index.jsp</welcome-file>
-  <welcome-file>default.html</welcome-file>
-  <welcome-file>default.htm</welcome-file>
-  <welcome-file>default.jsp</welcome-file>
- </welcome-file-list>
+	<servlet-mapping>
+		<servlet-name>RegServlet</servlet-name>
+		<url-pattern>/servlet/RegServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		>
+		<!--url-pattern处必须以/开头，这里的/表示项目的根目录 -->
+		<url-pattern>/servlet/HelloServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet1</servlet-name>
+		<url-pattern>/servlet/TestServlet1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet2</servlet-name>
+		<url-pattern>/servlet/TestServlet2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/servlet/TestServlet</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>
