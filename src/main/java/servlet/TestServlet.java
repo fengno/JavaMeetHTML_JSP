@@ -61,7 +61,12 @@ public class TestServlet extends HttpServlet {
 		 //请求重定向方式跳转到test.jsp,当前路径是ServletPathDirection/servlet/
 		 //response.sendRedirect("test.jsp");
 		 //使用request.getContextPath获得上下文对象
-	     response.sendRedirect(request.getContextPath()+"/test.jsp");
+	     //response.sendRedirect(request.getContextPath()+"/test.jsp");
+	
+	    //服务器内部跳转,这里的斜线表示项目的根目录
+//		request.getRequestDispatcher("/test.jsp").forward(request, response);
+		//或者
+		request.getRequestDispatcher("../test.jsp").forward(request, response);
 	}
 
 	/**
