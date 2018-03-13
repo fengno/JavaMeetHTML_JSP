@@ -17,7 +17,7 @@
 	<hr>
 	<div>
 		登录失败<br>
-		<a href="login.jsp">返回登录</a>
+		<a href="servlet_login.jsp">返回登录</a>
 	</div>
 </body>
 </html>
